@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Wireless Message Circular System</title>
+  <style>
+    html {font-family: Arial; display: inline-block; text-align: center;}
+    h2 {font-size: 2rem;}
+    p {font-size: 1.9rem;}
+    body {max-width: 400px; margin:0px auto; padding-bottom: 25px;
+      background: linear-gradient(rgba(184, 156, 156, 0.5),rgba(173, 148, 148, 0.5)), url('https://upload.wikimedia.org/wikipedia/commons/1/13/GEC_MAIN_BUILDING_LATEST.jpg');}
+    .button { background-color: #49a2b6;border-radius: 10px; border: none; color: white; padding: 16px 20px;
+    text-decoration: none; font-size: 20px; margin: 2px; cursor: pointer;}
+    .textarea {width:90%; margin-bottom: 10px;}
+    .checkbox {margin-right: 5px;}
+    .hidden {display: none;font-size: 20px;}
+    .visible {align-items: center;align-content: center; margin-top: 30%;display: block;font-size: 20px; font-weight: 650;}
+    .button:hover{
+      color: rgb(226, 128, 48);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Login Section -->
+  <div id="loginSection" class="visible">
+    <h2>Login Circular System</h2>
+    <form>
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" placeholder="Enter username"><br><br>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" placeholder="Enter password"><br><br>
+      <button class="button" type="button" onclick="validateLogin()">Login</button>
+    </form>
+    <p id="loginMessage" style="color: red; display: none;">Incorrect credentials. Please try again.</p>
+  </div>
+
+  <!-- Main Application Section -->
+  <div id="appSection" class="hidden">
+    <h2>ECE Block</h2>
+    <form>
+      <label>Select Classrooms:</label><br>
+      <div>
+        <input type="checkbox" id="class1" class="checkbox" value="Classroom 1">
+        <label for="class1">Classroom 1</label><br>
+        <input type="checkbox" id="class2" class="checkbox" value="Classroom 2">
+        <label for="class2">Classroom 2</label><br>
+        <input type="checkbox" id="class3" class="checkbox" value="Classroom 3">
+        <label for="class3">Classroom 3</label><br>
+      </div><br>
+      
+      <label for="logText" maxlength="200">Enter text to speak:</label><br>
+      <textarea class="textarea" id="logText" name="logText" rows="4" placeholder="Enter text here..."></textarea><br>
+      
+      <label>
+        <input type="checkbox" id="importantMessage" class="checkbox">
+        Mark as Important
+      </label><br><br>
+
+      <button class="button" type="button" onclick="sendData()">Send</button> 
+    </form><br>
+  </div>
+
+  <script src="auth.js"></script> <!-- Linked JavaScript file -->
+</body>
+</html>
